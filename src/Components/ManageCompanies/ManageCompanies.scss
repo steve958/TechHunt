@@ -1,16 +1,18 @@
-div.card-wrapper{
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
+// div.companies-wrapper{
+//     max-height: 60vh;
+//     padding: 40px;
+//     overflow-y: scroll;
+//     overflow-x: hidden;
+// }
 
 
-div.card-wrapper::-webkit-scrollbar {
-    width: 12px;
-    background-color: rgba(0, 0, 0, 0.693);
-    // color: rgb(153, 75, 75);
+// div.cardcompanies-wrapper::-webkit-scrollbar {
+//     width: 12px;
+//     background-color: rgba(0, 0, 0, 0.693);
+//     // color: rgb(153, 75, 75);
     
-  }
-  div.card-wrapper::-webkit-scrollbar-thumb {
-    background: rgba(1, 41, 83, 0.5764705882);
-    border-radius: 25px;
-  }
+//   }
+//   div.cardcompanies-wrapper::-webkit-scrollbar-thumb {
+//     background: rgba(1, 41, 83, 0.5764705882);
+//     border-radius: 25px;
+//   }

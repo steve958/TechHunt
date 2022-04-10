@@ -20,6 +20,9 @@ export const App = () => {
   const [candidatesData, getCandidatesData] = useState([]);
   console.log(candidatesData);
 
+  const [companiesData, getCompaniesData] = useState([]);
+  console.log(candidatesData);
+
   const [shouldUpdate, setUpdate] = useState(false)
   const setShouldUpdate = () => {
 
@@ -35,9 +38,18 @@ export const App = () => {
       });
   }, [shouldUpdate]);
 
+  useEffect(() => {
+    fetch('http://localhost:3333/api/companies')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        getCompaniesData(data);
+      });
+  }, [shouldUpdate]);
+
   return (
     <>
-      <Provider value={{ changeTokenStatus, tokenStatus, candidatesData, getTokenData, tokenData, setShouldUpdate }}>
+      <Provider value={{ changeTokenStatus, tokenStatus, candidatesData, getTokenData, tokenData, setShouldUpdate, companiesData }}>
         {tokenStatus ? (
           <Switch>
             <Route path='/adminpanel'>
