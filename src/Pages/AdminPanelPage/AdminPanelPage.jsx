@@ -62,7 +62,7 @@ const AdminPanelPage = () => {
             <button id="companies" onClick={(e) => changeIsCompanies(e)}>
               Manage Companies
             </button>
-            <button id="reports">Manage Candidates</button>
+            <button id="reports">Manage Reports</button>
           </div>
           <div className="content-wrapper">
             {isCandidates && <ManageCandidates></ManageCandidates>}
