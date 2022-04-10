@@ -1,0 +1,59 @@
+div.login-comp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  max-width: 30vw;
+  height: 55vh;
+  padding: 20px;
+  background-color: rgba(245, 245, 245, 0.623);
+
+}
+
+p.login-admin {
+  text-align: center;
+  color: #012853;
+  opacity: 1;
+  font-size: 50px;
+}
+
+h2.admin-info {
+  margin-top: 15px;
+  color: #012853;
+  font-size: 30px;
+  text-align: center;
+}
+
+div.input {
+  color: #012853;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+div > input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #012853;
+  width: 20vw;
+  height: 3vh;
+  color: whitesmoke;
+  font-size: 15px;
+}
+
+div.input button#sign-in {
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: #012853;
+  color: whitesmoke;
+  font-size: 25px;
+  align-self: center;
+}
+
+button#sign-in:hover {
+  cursor: pointer;
+}
