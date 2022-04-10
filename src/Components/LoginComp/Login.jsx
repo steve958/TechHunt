@@ -40,7 +40,7 @@ export const LoginComp = () => {
       <p className='login-admin'>Login as Admin</p>
       <h2 className='admin-info'>Enter as admin and manage data and reports</h2>
       <div className='input'>
-        <h3>Email :</h3>
+        <h3>Email:</h3>
         <input
           type='text'
           onChange={(e) => {
