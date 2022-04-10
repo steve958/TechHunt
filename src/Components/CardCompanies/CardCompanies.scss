@@ -1,4 +1,4 @@
-div.cardcandidates-wrapper{
+div.cardcompanies-wrapper{
     margin: 50px;
     max-height: 60vh;
     padding: 40px;
@@ -6,7 +6,7 @@ div.cardcandidates-wrapper{
     overflow-x: hidden;
 }
 
-div.cardcandidates-wrapper-each{
+div.cardcompanies-wrapper-each{
     padding: 32px;
     position: relative;
 }
@@ -15,18 +15,20 @@ button.removecandidate{
     
 }
 
-// div.cardcandidates-wrapper{
+// div.cardcompanies-wrapper{
    
 // }
 
 
-div.cardcandidates-wrapper::-webkit-scrollbar {
+div.cardcompanies-wrapper::-webkit-scrollbar {
     width: 12px;
     background-color: rgba(0, 0, 0, 0.693);
     // color: rgb(153, 75, 75);
     
   }
-  div.cardcandidates-wrapper::-webkit-scrollbar-thumb {
+  div.cardcompanies-wrapper::-webkit-scrollbar-thumb {
     background: rgba(1, 41, 83, 0.5764705882);
     border-radius: 25px;
   }
+
+

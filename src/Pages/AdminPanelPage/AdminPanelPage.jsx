@@ -34,7 +34,7 @@ const changeIsCompanies=(e)=>{
   console.log(isCompanies)
   
   setIsCanditates(false)
-    localStorage.setItem("isCandidates", false)
+    localStorage.setItem("isCompanies", false)
 }
 
 
@@ -48,6 +48,9 @@ const changeIsCompanies=(e)=>{
     localStorage.setItem("tokenData", "")
     localStorage.setItem("isCandidates",false)
 
+    
+    localStorage.setItem("isCompanies",false)
+
   }
   
 
@@ -60,7 +63,7 @@ const changeIsCompanies=(e)=>{
       <div className='button-wrapper'>
         <button id='candidates' onClick={(e)=>changeisCandidates(e)}>Manage Candidates</button>
         <button id='companies' onClick={(e)=>changeIsCompanies(e)}>Manage Companies</button>
-        <button id='reports'>Manage Candidates</button>
+        <button id='reports'>Manage Reports</button>
       </div>
       <div className='content-wrapper'>
       {isCandidates && <ManageCandidates></ManageCandidates>}
