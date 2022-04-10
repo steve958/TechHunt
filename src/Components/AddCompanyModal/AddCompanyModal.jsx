@@ -6,19 +6,19 @@ import { useContext } from "react";
 
 const AddCompanyModal = (props)=>{
     const value = useContext(ctx);
-    const [candidate, setCandidate]= useState({
+    const [company, setCompany]= useState({
         id: null,
         name: "",
         email:"",
     })
     const addCompany=()=>{
-        fetch('http://localhost:3333/api/candidates', {
+        fetch('http://localhost:3333/api/companies', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${value.tokenData}`
             },
-            body: JSON.stringify(candidate),
+            body: JSON.stringify(company),
         })
         .then((res) => res.json())
         .then((data) => {
@@ -33,8 +33,8 @@ const AddCompanyModal = (props)=>{
 
 
   const fillCompaniesData=(key, enteredValue) =>{
-      setCandidate({
-          ...candidate,
+      setCompany({
+          ...company,
           [key]:enteredValue
       })
   }
