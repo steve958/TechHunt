@@ -21,11 +21,11 @@ div.login-page-wrapper {
 }
 
 img.logo {
-  width: 100px;
-  height: 100px;
- background-image: url('../../../Cyber\ Wolf\ Logo.jpg');
- background-position: center;
- background-size: cover;
+  width: 200px;
+  height: 200px;
+  background-image: url('../../../wolf1.png');
+  background-position: center;
+  background-size: contain;
 }
 
 div.guest-login {
@@ -36,11 +36,10 @@ div.guest-login {
   color: whitesmoke;
   max-width: 30vw;
   height: 55vh;
-
 }
 
 div.guest-login h2 {
-  margin: 20px;
+  margin-top: 7vh;
   text-align: center;
   font-size: 50px;
 }
@@ -53,13 +52,13 @@ div.guest-login p {
 }
 
 div button.continue {
-  margin: 40px;
+  margin-top: 20vh;
   border-radius: 5px;
   padding: 5px;
   font-size: 25px;
   max-width: fit-content;
   align-self: center;
-  color:rgba(1, 41, 83,1); ;
+  color: rgba(1, 41, 83, 1);
   background-color: whitesmoke;
 }
 
