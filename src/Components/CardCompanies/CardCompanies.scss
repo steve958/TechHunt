@@ -1,34 +1,24 @@
-div.cardcompanies-wrapper{
-    margin: 50px;
-    max-height: 60vh;
-    padding: 40px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+div.cardcompanies-wrapper {
+  //   max-height: 60vh;
+  padding: 40px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  @media (max-width: 850px) {
+    height: 80vh;
+    width: 100%;
+  }
 }
 
-div.cardcompanies-wrapper-each{
-    padding: 32px;
-    position: relative;
+div.cardcompanies-wrapper-each {
+  padding: 32px;
+  position: relative;
 }
-button.removecandidate{
-    position: absolute;
-    
-}
-
-// div.cardcompanies-wrapper{
-   
-// }
-
 
 div.cardcompanies-wrapper::-webkit-scrollbar {
-    width: 12px;
-    background-color: rgba(0, 0, 0, 0.693);
-    // color: rgb(153, 75, 75);
-    
-  }
-  div.cardcompanies-wrapper::-webkit-scrollbar-thumb {
-    background: rgba(1, 41, 83, 0.5764705882);
-    border-radius: 25px;
-  }
-
-
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0.693);
+}
+div.cardcompanies-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(1, 41, 83, 0.5764705882);
+  border-radius: 25px;
+}

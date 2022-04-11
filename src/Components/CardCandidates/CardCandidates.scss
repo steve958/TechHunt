@@ -1,32 +1,75 @@
-div.cardcandidates-wrapper{
-    margin: 50px;
-    max-height: 60vh;
-    padding: 40px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+div.cardcandidates-wrapper {
+  //   max-height: 60vh;
+  padding: 40px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  @media (max-width: 850px) {
+    height: 80vh;
+    min-width: 100%;
+  }
 }
 
-div.cardcandidates-wrapper-each{
-    padding: 32px;
-    position: relative;
-}
-button.removecandidate{
-    position: absolute;
-    
+.cardcandidates-wrapper-each > img {
+  background-color: whitesmoke;
+  @media (max-width: 850) {
+    width: 100%;
+  }
 }
 
-// div.cardcandidates-wrapper{
-   
-// }
+.removecandidate {
+  justify-self: flex-end;
+  letter-spacing: 2px;
+  padding: 0.3em;
+  background-color: whitesmoke;
+  border: none;
+}
 
+table.cardcandidates-wrapper-each {
+  flex-wrap: wrap;
+  border: 2px solid whitesmoke;
+  width: 70vw;
+  padding: 5em;
+  position: relative;
+  color: whitesmoke;
+  text-align: center;
+  background-color: rgba(1, 41, 83, 0.5764705882);
+}
 
 div.cardcandidates-wrapper::-webkit-scrollbar {
-    width: 12px;
-    background-color: rgba(0, 0, 0, 0.693);
-    // color: rgb(153, 75, 75);
-    
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0.693);
+}
+div.cardcandidates-wrapper::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  border-radius: 25px;
+}
+
+th,
+td {
+  border: 2px solid whitesmoke;
+}
+
+td > img {
+  background-color: whitesmoke;
+}
+
+td > button:hover {
+  cursor: pointer;
+  background-color: rgb(162, 8, 8);
+  color: whitesmoke;
+}
+
+.items {
+  font-size: 1em;
+  text-align: center;
+  margin: 1em;
+  flex-wrap: wrap;
+}
+
+.remove-email {
+  @media (max-width: 850px) {
+    display: none;
   }
-  div.cardcandidates-wrapper::-webkit-scrollbar-thumb {
-    background: rgba(1, 41, 83, 0.5764705882);
-    border-radius: 25px;
-  }
+}
