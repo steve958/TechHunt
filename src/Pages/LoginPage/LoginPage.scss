@@ -7,26 +7,45 @@ div.login-page-containter {
   height: 100vh;
   background-image: url('./background\ final.jpg');
   background-size: cover;
+  position: fixed;
 }
 
 h1.welcome {
-  margin: 15px;
+  margin: 0.5em;
   flex-wrap: wrap;
-  font-size: 80px;
+  font-size: clamp(4.5rem, 2.5vw, 3rem);
   color: whitesmoke;
+  @media (max-width: 850px) {
+    margin: 0;
+    font-size: clamp(3rem, 1.5vw, 2rem);
+    text-align: center;
+  }
+  @media (max-width: 350px) {
+    margin: 0;
+    font-size: clamp(2.5rem, 1.5vw, 1rem);
+    text-align: center;
+  }
 }
 
 div.login-page-wrapper {
   display: flex;
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
 }
 
 img.logo {
-  width: 0px;
-  height: 0px;
-  padding: 100px;
+  padding: 6.5em;
   background-image: url('../../../wolf1.png');
   background-position: center;
   background-size: contain;
+  @media (max-width: 850px) {
+    padding: 4em;
+    justify-self: center;
+  }
+  @media (max-width: 350px) {
+    padding: 3em;
+  }
 }
 
 div.guest-login {
@@ -36,24 +55,33 @@ div.guest-login {
   background-color: rgba(1, 41, 83, 0.5764705882);
   color: whitesmoke;
   max-width: 30vw;
-  height: 55vh;
+  height: 100%;
+  @media (max-width: 850px) {
+    max-width: 80vw;
+    min-height: 35vh;
+    font-size: 8px;
+  }
+  @media (max-width: 350px) {
+    max-width: 100vw;
+    min-height: 35vh;
+    font-size: 8px;
+  }
 }
 
 div.guest-login h2 {
-  margin-top: 7vh;
+  margin-top: 5vh;
   text-align: center;
-  font-size: 50px;
+  font-size: 3.5em;
 }
 
 div.guest-login p {
-  margin: 10px;
+  margin: 5vh;
   flex-wrap: wrap;
-  font-size: 30px;
+  font-size: 2em;
   text-align: center;
 }
 
 div button.continue {
-  margin-top: 20vh;
   border-radius: 5px;
   padding: 5px;
   font-size: 25px;
@@ -65,4 +93,8 @@ div button.continue {
 
 div button.continue:hover {
   cursor: pointer;
+}
+
+div.img-father {
+  text-align: center;
 }

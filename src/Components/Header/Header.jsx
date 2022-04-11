@@ -1,12 +1,31 @@
 import React from 'react';
 import './Header.scss';
+import { ctx } from '../ProviderComp/ProviderComp';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
-export const Header = () => {
+export const Header = (props) => {
+  const value = useContext(ctx);
+
   return (
-    <div className="header">
-      <div className="header-logo"></div>
+    <div className='header'>
+      <div className='header-logo'></div>
       <div></div>
-      <p className="logged">You are logged in as admin</p>
+      <p className='logged'>
+        {localStorage.getItem('token') === 'true'
+          ? 'You are logged in as admin'
+          : 'Guest'}
+      </p>
+      <Link to='/login'>
+        <button
+          className='log-button'
+          onClick={() => {
+            if (localStorage.getItem('token') === 'true') props.logout();
+          }}
+        >
+          {localStorage.getItem('token') === 'true' ? 'logout' : 'login'}
+        </button>
+      </Link>
     </div>
   );
 };

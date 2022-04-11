@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ctx } from '../../Components/ProviderComp/ProviderComp';
 import { useContext } from 'react';
-import { ctxBlue } from '../../Components/ProviderComp/ProviderComp';
 import AddCandidateModal from '../../Components/AddCandidateModal/AddCandidateModal';
 import ManageCandidates from '../../Components/ManageCandidates/ManageCandidates';
 import ManageCompanies from '../../Components/ManageCompanies/ManageCompanies';
@@ -11,62 +10,81 @@ import Header from '../../Components/Header/Header';
 
 const AdminPanelPage = () => {
   const value = useContext(ctx);
-  const valueBlue = useContext(ctxBlue);
 
-  const [isCandidates, setIsCanditates] = useState(
-    'true' === localStorage.getItem('isCandidates')
+  const [isCandidatesClicked, setIsCanditatesClicked] = useState(
+    'false' === localStorage.getItem('isCandidatesClicked')
   );
-  const [isCompanies, setIsCompanies] = useState(
-    'true' === localStorage.getItem('isCompanies')
+  const [isCompaniesClicked, setIsCompaniesClicked] = useState(
+    'true' === localStorage.getItem('isCompaniesClicked')
   );
-  const [isReports, setIsReports] = useState(false);
+  const [isReportsClicked, setIsReportsClicked] = useState(
+    'true' === localStorage.getItem('isReportsClicked')
+  );
 
-  const changeisCandidates = (e) => {
+  const changeisCandidatesClicked = (e) => {
     e.stopPropagation();
-    setIsCanditates(!isCandidates);
-    localStorage.setItem('isCandidates', !isCandidates);
-    console.log(isCandidates);
+    setIsCanditatesClicked(true);
+    localStorage.setItem('isCandidatesClicked', true);
+    console.log(isCandidatesClicked);
 
-    setIsCompanies(false);
-    localStorage.setItem('isCompanies', false);
+    setIsCompaniesClicked(false);
+    localStorage.setItem('isCompaniesClicked', false);
+    setIsReportsClicked(false);
+    localStorage.setItem('isReportsClicked', false);
   };
-  const changeIsCompanies = (e) => {
+  const changeIsCompaniesClicked = (e) => {
     e.stopPropagation();
-    setIsCompanies(!isCompanies);
-    localStorage.setItem('isCompanies', !isCompanies);
-    console.log(isCompanies);
+    setIsCompaniesClicked(true);
+    localStorage.setItem('isCompaniesClicked', true);
+    console.log(isCompaniesClicked);
 
-    setIsCanditates(false);
-    localStorage.setItem('isCandidates', false);
+    setIsCanditatesClicked(false);
+    localStorage.setItem('isCandidatesClicked', false);
+    setIsReportsClicked(false);
+    localStorage.setItem('isReportsClicked', false);
+  };
+
+  const changeIsReportsClicked = (e) => {
+    e.stopPropagation();
+    setIsReportsClicked(true);
+    localStorage.setItem('isReportsClicked', true);
+
+    setIsCanditatesClicked(false);
+    localStorage.setItem('isCandidatesClicked', false);
+    setIsCompaniesClicked(false);
+    localStorage.setItem('isCompaniesClicked', false);
   };
 
   function logOut() {
     localStorage.setItem('token', '');
     value.changeTokenStatus(false);
     localStorage.setItem('tokenData', '');
-    localStorage.setItem('isCandidates', false);
+    localStorage.setItem('isCandidatesClicked', false);
   }
 
   return (
     <>
-      <div className="adminpanelpage-container">
-        <Header></Header>
-        <header>
-          <button onClick={logOut}>Logout</button>
-        </header>
-        <div className="adminpanelpage-wrapper">
-          <div className="button-wrapper">
-            <button id="candidates" onClick={(e) => changeisCandidates(e)}>
+      <div className='adminpanelpage-container'>
+        <Header logout={logOut}></Header>
+        <div className='adminpanelpage-wrapper'>
+          <div className='button-wrapper'>
+            <button
+              id='candidates'
+              onClick={(e) => changeisCandidatesClicked(e)}
+            >
               Manage Candidates
             </button>
-            <button id="companies" onClick={(e) => changeIsCompanies(e)}>
+            <button id='companies' onClick={(e) => changeIsCompaniesClicked(e)}>
               Manage Companies
             </button>
-            <button id="reports">Manage Reports</button>
+            <button id='reports' onClick={(e) => changeIsReportsClicked(e)}>
+              Manage Reports
+            </button>
           </div>
-          <div className="content-wrapper">
-            {isCandidates && <ManageCandidates></ManageCandidates>}
-            {isCompanies && <ManageCompanies></ManageCompanies>}
+          <div className='content-wrapper'>
+            {isCandidatesClicked && <ManageCandidates></ManageCandidates>}
+            {isCompaniesClicked && <ManageCompanies></ManageCompanies>}
+            {isReportsClicked && <ManageReports></ManageReports>}
           </div>
         </div>
       </div>

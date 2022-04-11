@@ -23,15 +23,14 @@ export const LoginComp = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-
-        data.accessToken ? value.changeTokenStatus(true) 
+        data.accessToken
+          ? value.changeTokenStatus(true)
           : value.changeTokenStatus(false);
-          
-          localStorage.setItem('token', true);
-          
-          
-          value.getTokenData(data.accessToken)
-        localStorage.setItem("tokenData",data.accessToken)
+
+        localStorage.setItem('token', true);
+
+        value.getTokenData(data.accessToken);
+        localStorage.setItem('tokenData', data.accessToken);
       });
   };
 
@@ -40,16 +39,17 @@ export const LoginComp = () => {
       <p className='login-admin'>Login as Admin</p>
       <h2 className='admin-info'>Enter as admin and manage data and reports</h2>
       <div className='input'>
-        <h3>Email:</h3>
+        {localStorage.getItem('token') === 'true' ? <h3 className='wrong-input'>You have entered an invalid email or password</h3> : null}
         <input
           type='text'
+          placeholder='email'
           onChange={(e) => {
             getUseremail(e.target.value);
           }}
         />
-        <h3>Password :</h3>
         <input
           type='password'
+          placeholder='password'
           onChange={(e) => {
             getUserpass(e.target.value);
           }}
