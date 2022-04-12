@@ -1,0 +1,58 @@
+div.candidates-guestpage-container{
+    margin-top: 3vh;
+    margin-right:5vw;
+    margin-left:5vw;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 80vh;
+    padding: 30px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+    
+}
+
+
+div.candidate-guestpage-wrapper{
+    padding: 10px;
+    width: 400px; 
+    background-color:rgba(245, 245, 245, 0.623);
+    text-align: center;
+    
+}
+
+a{
+  text-decoration: none;
+  color: #012953fd;
+}
+
+
+
+div.candidate-guestpage-wrapperPrima{
+  padding: 10px;
+  background-image: linear-gradient(to bottom, #d5e8e9 0% #012953c7);
+  margin:10px
+}
+
+div.candidates-guestpage-container-master{
+  background-image: url('./background\ final.jpg');
+  height: 100vh;
+}
+
+
+
+div.candidates-guestpage-container::-webkit-scrollbar {
+    width: 12px;
+    background-color: rgba(0, 0, 0, 0.693);
+    // color: rgb(153, 75, 75);
+    
+  }
+  div.candidates-guestpage-container::-webkit-scrollbar-thumb {
+    background: whitesmoke;
+    border-radius: 25px;
+  }
+
+  h2.candidates-guestpage-ime{
+    letter-spacing: 3px;
+    padding-bottom: 5px;
+  }

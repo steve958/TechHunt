@@ -72,6 +72,9 @@ export const App = () => {
             <Route path='/adminpanel'>
               <AdminPanelPage></AdminPanelPage>
             </Route>
+            <Route path='/candidates/:id'>
+              <SingleCandidatePage></SingleCandidatePage>
+            </Route>
             <Route path='/candidates'>
               <Candidates></Candidates>
             </Route>
@@ -80,20 +83,18 @@ export const App = () => {
                 <AdminPanelPage></AdminPanelPage>
               </Redirect>
             </Route>
-            <Route path='/candidate/:id'>
-              <SingleCandidatePage></SingleCandidatePage>
-            </Route>
+
           </Switch>
         ) : (
           <Switch>
             <Route exact path='/'>
               <Redirect to='/login'></Redirect>
             </Route>
+            <Route path='/candidates/:id'>
+              <SingleCandidatePage></SingleCandidatePage>
+            </Route>
             <Route path='/candidates'>
               <Candidates></Candidates>
-            </Route>
-            <Route path='/candidate/:id'>
-              <SingleCandidatePage></SingleCandidatePage>
             </Route>
             <Route path='/login'>
               <LoginPage></LoginPage>
