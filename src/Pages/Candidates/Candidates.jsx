@@ -4,11 +4,13 @@ import { useContext } from 'react';
 import Header from '../../Components/Header/Header';
 import "./Candidates.scss"
 import { Link } from 'react-router-dom';
+import GuestPageSearch from '../../Components/GuestPageSearch/GuestPageSearch';
 export const Candidates = () => {
   const value = useContext(ctx);
   return (
     <div className='candidates-guestpage-container-master'>
       <Header></Header>
+      <GuestPageSearch></GuestPageSearch>
       <div className="candidates-guestpage-container">
         {value.candidatesData.map((e) => {
           console.log(e)
