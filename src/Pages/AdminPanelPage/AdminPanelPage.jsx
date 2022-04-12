@@ -11,48 +11,41 @@ import Header from '../../Components/Header/Header';
 const AdminPanelPage = () => {
   const value = useContext(ctx);
 
-  const [isCandidatesClicked, setIsCanditatesClicked] = useState(
-    true
-  );
-  const [isCompaniesClicked, setIsCompaniesClicked] = useState(
-    'true' === localStorage.getItem('isCompaniesClicked')
-  );
-  const [isReportsClicked, setIsReportsClicked] = useState(
-    'true' === localStorage.getItem('isReportsClicked')
-  );
+  const [isCandidatesClicked, setIsCanditatesClicked] = useState(true);
+  const [isCompaniesClicked, setIsCompaniesClicked] = useState(false);
+  const [isReportsClicked, setIsReportsClicked] = useState(false);
 
   const changeisCandidatesClicked = (e) => {
     e.stopPropagation();
     setIsCanditatesClicked(true);
-    localStorage.setItem('isCandidatesClicked', true);
-    console.log(isCandidatesClicked);
+
+
 
     setIsCompaniesClicked(false);
-    localStorage.setItem('isCompaniesClicked', false);
+
     setIsReportsClicked(false);
-    localStorage.setItem('isReportsClicked', false);
+
   };
   const changeIsCompaniesClicked = (e) => {
     e.stopPropagation();
     setIsCompaniesClicked(true);
-    localStorage.setItem('isCompaniesClicked', true);
-    console.log(isCompaniesClicked);
+   
 
     setIsCanditatesClicked(false);
-    localStorage.setItem('isCandidatesClicked', false);
+    
     setIsReportsClicked(false);
-    localStorage.setItem('isReportsClicked', false);
+ 
   };
 
   const changeIsReportsClicked = (e) => {
     e.stopPropagation();
     setIsReportsClicked(true);
-    localStorage.setItem('isReportsClicked', true);
+  
 
     setIsCanditatesClicked(false);
-    localStorage.setItem('isCandidatesClicked', false);
+    
     setIsCompaniesClicked(false);
-    localStorage.setItem('isCompaniesClicked', false);
+    
   };
 
   function logOut() {

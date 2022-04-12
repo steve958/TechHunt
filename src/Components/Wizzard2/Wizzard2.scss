@@ -1,3 +1,37 @@
 div.wizzard2-container {
-  color: white;
+  color: whitesmoke;
+  text-align: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 70vh;
+}
+
+#select-company {
+  letter-spacing: 10px;
+}
+
+.card-company-select {
+  border: 2px solid whitesmoke;
+}
+
+.card-company-select > img {
+  background-color: whitesmoke;
+}
+
+.card-company-select:hover {
+  background-color: rgba(1, 41, 83);
+  cursor: pointer;
+}
+
+.selected {
+  background-color: rgba(1, 41, 83);
+}
+
+div.wizzard1-container::-webkit-scrollbar {
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0.693);
+}
+div.wizzard1-container::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  border-radius: 25px;
 }

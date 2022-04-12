@@ -1,8 +1,44 @@
 import React from 'react';
+import { ctx } from '../ProviderComp/ProviderComp';
+import { useContext, useState } from 'react';
 import './Wizzard1.scss';
 
 const Wizzard1 = () => {
-  return <div className='wizzard1-container'>JA SAM WIZZARD 1</div>;
+  const value = useContext(ctx);
+  const [selectedCandidate, changeSelectedCandidate] = useState(
+    localStorage.getItem('candidateId')
+  );
+
+  function selectedCandidateId(name) {
+    localStorage.setItem('candidateId', name);
+    changeSelectedCandidate(name);
+  }
+
+  return (
+    <div className='wizzard1-container'>
+      <h2 id='select-candidate'>SELECT CANDIDATE</h2>
+      {value.candidatesData.map((e) => {
+        return (
+          <div
+            id={e.id}
+            className={`card-candidate-select ${
+              e.name === selectedCandidate ? 'selected' : null
+            }`}
+            onClick={() => {
+              selectedCandidateId(e.name);
+            }}
+          >
+            <img
+              src='https://upload.wikimedia.org/wikipedia/commons/9/90/Ic_person_48px.svg'
+              alt='cantLoad'
+            />
+            <h2>{e.name}</h2>
+            <h3>{e.education}</h3>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Wizzard1;

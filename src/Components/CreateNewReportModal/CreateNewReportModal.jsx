@@ -31,8 +31,8 @@ const CreateNewReportModal = (props) => {
   return (
     <>
       <div className='createnewreportmodal-container'>
-        <button id='closeaddcandidate-modal' onClick={() => props.setModal()}>
-          X
+        <button id='closenewreport-modal' onClick={() => props.setModal()}>
+          close modal
         </button>
         <div className='first-button'>
           <button id='previous-button' onClick={() => changeWizzardPrev()}>

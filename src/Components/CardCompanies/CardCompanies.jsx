@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const CardCompanies = () => {
   const value = useContext(ctx);
-
+  console.log(value);
   const deleteCard = (e, event) => {
     event.preventDefault();
     fetch(`http://localhost:3333/api/companies/${e.id}`, {
@@ -31,7 +31,7 @@ const CardCompanies = () => {
           <th>Email</th>
           <th>Remove candidate</th>
         </tr>
-        {value.candidatesData.map((e) => {
+        {value.companiesData.map((e) => {
           return (
             <tr>
               <td>

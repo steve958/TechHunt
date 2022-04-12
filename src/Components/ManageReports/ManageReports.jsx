@@ -5,24 +5,24 @@ import CardReports from '../CardReports/CardReports';
 import CreateNewReportModal from '../CreateNewReportModal/CreateNewReportModal';
 
 const ManageReports = () => {
-  const [isModalOpen, setModal] = useState(
-    'true' === localStorage.getItem('isModalOpen')
-  );
+  const [isModalOpen, setModal] = useState(false);
 
   const changeModalStatus = (xx) => {
-    
     setModal(xx);
-    localStorage.setItem('isModalOpen', isModalOpen);
+    localStorage.setItem('candidateId', null);
+    localStorage.setItem('companyId', null);
   };
 
   return (
-      <>
-      {isModalOpen && <CreateNewReportModal setModal={()=>changeModalStatus(false)}/>}
+    <>
+      {isModalOpen && (
+        <CreateNewReportModal setModal={() => changeModalStatus(false)} />
+      )}
       <div className='card-wrapper'>
         <CardReports></CardReports>
       </div>
       <div className='addReport-button-wrapper'>
-        <button onClick={() => changeModalStatus(true)}>
+        <button id='create-new-report' onClick={() => changeModalStatus(true)}>
           Create new report
         </button>
       </div>
