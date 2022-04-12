@@ -6,17 +6,18 @@ import './Wizzard2.scss';
 const Wizzard2 = () => {
   const value = useContext(ctx);
   const [selectedCompany, changeSelectedCompany] = useState(
-    localStorage.getItem('companyId')
+    localStorage.getItem('companyName')
   );
 
-  function selectedCompanyId(name) {
-    localStorage.setItem('companyId', name);
+  function selectedCompanyId(name, id) {
+    localStorage.setItem('companyId', id);
+    localStorage.setItem('companyName', name);
     changeSelectedCompany(name);
   }
 
   return (
-    <div className='wizzard2-container'>
-      <h2 id='select-company'>SELECT COMPANY</h2>
+    <div className="wizzard2-container">
+      <h2 id="select-company">SELECT COMPANY</h2>
       {value.companiesData.map((e) => {
         return (
           <div
@@ -25,7 +26,7 @@ const Wizzard2 = () => {
               e.name === selectedCompany ? 'selected' : null
             }`}
             onClick={() => {
-              selectedCompanyId(e.name);
+              selectedCompanyId(e.name, e.id);
             }}
           >
             <h2>{e.name}</h2>

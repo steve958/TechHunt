@@ -1,6 +1,6 @@
 div.addCandidateModal-container {
   height: 80vh;
-  width: 70vw;
+  width: 80vw;
   display: flex;
   position: absolute;
   top: 80px;
@@ -33,7 +33,7 @@ button#closeaddcandidate-modal {
 }
 
 #add-candidate:hover {
-    cursor: pointer;
-    background-color: green;
-    color: whitesmoke;
+  cursor: pointer;
+  background-color: green;
+  color: whitesmoke;
 }

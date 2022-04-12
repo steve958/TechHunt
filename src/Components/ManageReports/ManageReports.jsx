@@ -9,8 +9,8 @@ const ManageReports = () => {
 
   const changeModalStatus = (xx) => {
     setModal(xx);
-    localStorage.setItem('candidateId', null);
-    localStorage.setItem('companyId', null);
+    localStorage.setItem('candidateName', null);
+    localStorage.setItem('companyName', null);
   };
 
   return (
@@ -18,11 +18,11 @@ const ManageReports = () => {
       {isModalOpen && (
         <CreateNewReportModal setModal={() => changeModalStatus(false)} />
       )}
-      <div className='card-wrapper'>
+      <div className="card-wrapper">
         <CardReports></CardReports>
       </div>
-      <div className='addReport-button-wrapper'>
-        <button id='create-new-report' onClick={() => changeModalStatus(true)}>
+      <div className="addReport-button-wrapper">
+        <button id="create-new-report" onClick={() => changeModalStatus(true)}>
           Create new report
         </button>
       </div>

@@ -1,57 +1,74 @@
-div.singlepage-candidate-wrapper{
-    display: flex;
-    min-height: 50vh;
-    padding: 40px 100px;
+div.singlepage-candidate-wrapper {
+  display: flex;
+  min-height: 50vh;
+  padding: 40px 100px;
 }
 
-div.img-first-wrapper{
-    min-height: 30vh;
-    margin: auto 0;
-    
-    img{
-        background-color: rgba(245, 245, 245);
-    }
+div.img-first-wrapper {
+  min-height: 30vh;
+  margin: auto 0;
+
+  img {
+    background-color: rgba(245, 245, 245);
+  }
 }
 
-div.name-and-birthday-wrapper{
-    display: flex;
-    padding:20px;
-    h1{
-        padding: 0 20px;
-    }
+div.name-and-birthday-wrapper {
+  display: flex;
+  padding: 20px;
+  h1 {
+    padding: 0 20px;
+  }
 }
 
-div.email-and-education-wrapper{
-    display: flex;
-    padding:20px;
-    h1{
-        padding: 0 20px;
-    }
+div.email-and-education-wrapper {
+  display: flex;
+  padding: 20px;
+  h1 {
+    padding: 0 20px;
+  }
 }
 
-div.singlepage-candidate-container-master{
-    background-image: url('./background\ final.jpg');
-height: 100vh;
+div.singlepage-candidate-container-master {
+  background-image: url('./background\ final.jpg');
+  height: 100vh;
 }
 
-div.info-second-wrapper{
-    color: rgba(1, 41, 83);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color:rgba(245, 245, 245, 0.623);
+div.info-second-wrapper {
+  color: rgba(1, 41, 83);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(245, 245, 245, 0.623);
 }
 
 /* table*/
 
-div.singlepage-candidate-table-container{
-    min-height: 35vh;
-    margin: 0 40px;
+div.singlepage-candidate-table-container {
+  min-height: 35vh;
+  margin: 0 40px;
 }
 
-div.singlepage-singlecandidatereport-wrapper{
-    min-height: 10vh;
-    display: flex;
-    color: white;
-    justify-content: space-around;
+div.singlepage-singlecandidatereport-wrapper {
+  background-color: rgba(245, 245, 245, 0.623);
+  min-height: 10vh;
+  display: flex;
+  color: rgba(1, 41, 83);
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+  border: 3px solid whitesmoke;
+}
+
+div.singlepage-singlecandidatereport-wrapper > button {
+  background-color: rgba(1, 41, 83);
+  color: whitesmoke;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+div.singlepage-singlecandidatereport-wrapper > button:hover {
+  cursor: pointer;
+  color: rgba(1, 41, 83);
+  background-color: rgba(245, 245, 245, 0.623);
 }

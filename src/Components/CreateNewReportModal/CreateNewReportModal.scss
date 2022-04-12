@@ -1,6 +1,6 @@
 div.createnewreportmodal-container {
   height: 80vh;
-  width: 70vw;
+  width: 80vw;
   display: flex;
   position: absolute;
   top: 80px;
@@ -23,3 +23,13 @@ div.wizzard-container {
   width: 80vw;
 }
 
+#previous-button {
+  height: 50vh;
+  font-size: 1em;
+}
+
+#previous-button:hover {
+  background-color: rgba(1, 41, 83);
+  color: whitesmoke;
+  cursor: pointer;
+}
