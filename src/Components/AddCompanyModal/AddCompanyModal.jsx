@@ -23,7 +23,6 @@ const AddCompanyModal = (props)=>{
         .then((res) => res.json())
         .then((data) => {
           console.log(value.tokenData)
-          console.log("Dodajem kandidata"+data)
          props.setModal()
          value.setShouldUpdate()
       });
@@ -41,7 +40,7 @@ const AddCompanyModal = (props)=>{
 
     return (
         <div className="addCompanyModal-container">
-            <button id="closeaddcompany-modal" onClick={()=>props.setModal()}>X</button>
+            <button id="closeaddcompany-modal" onClick={()=>props.setModal()}>close modal</button>
             <div className="addCompanyModal-wrapper">
                 <p>ID:</p>
                 <input type="number" name="id" onChange={(e) =>{
@@ -55,7 +54,7 @@ const AddCompanyModal = (props)=>{
                 <input type="text" name="email" onChange={(e) =>{
                     fillCompaniesData(e.target.name, e.target.value)
                 }} placeholder="email"/>
-            <button onClick={()=>addCompany()}>Add Company</button>
+            <button id="add-company" onClick={()=>addCompany()}>Add Company</button>
             </div>
             
 

@@ -23,13 +23,14 @@ const CardCandidates = () => {
   };
 
   return (
-    <div className="cardcandidates-wrapper">
-      <table className="cardcandidates-wrapper-each">
+    <div className='cardcandidates-wrapper'>
+      <h2 className='title'>MANAGE CANDIDATES</h2>
+      <table className='cardcandidates-wrapper-each'>
         <tr>
           <th>Avatar</th>
           <th>Name</th>
-          <th>Education</th>
-          <th className="remove-email">Email</th>
+          <th className='remove-education'>Education</th>
+          <th className='remove-email'>Email</th>
           <th>Remove candidate</th>
         </tr>
         {value.candidatesData.map((e) => {
@@ -37,22 +38,22 @@ const CardCandidates = () => {
             <tr>
               <td>
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/9/90/Ic_person_48px.svg"
-                  alt="cantLoad"
+                  src='https://upload.wikimedia.org/wikipedia/commons/9/90/Ic_person_48px.svg'
+                  alt='cantLoad'
                 ></img>
               </td>
               <td>
-                <p className="items">{e.name}</p>
+                <p className='items'>{e.name}</p>
               </td>
               <td>
-                <p className="items">{e.education}</p>
+                <p className='items remove-education'>{e.education}</p>
               </td>
-              <td className="remove-email">
-                <p className="items">{e.email}</p>
+              <td className='remove-email'>
+                <p className='items'>{e.email}</p>
               </td>
               <td>
                 <button
-                  className="removecandidate"
+                  className='removecandidate'
                   onClick={(event) => {
                     deleteCard(e, event);
                   }}

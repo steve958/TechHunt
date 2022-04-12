@@ -2,7 +2,7 @@ import React from "react";
 import CardCompanies from "../CardCompanies/CardCompanies";
 import { useState } from "react";
 import AddCompanyModal from "../AddCompanyModal/AddCompanyModal";
-import "./ManageCompanies.scss"
+
 
 const ManageCompanies = () => {
 
@@ -21,7 +21,7 @@ const ManageCompanies = () => {
             <CardCompanies></CardCompanies>
         </div>
         <div className="addCompany-button-wrapper">
-        <button onClick={()=>changeModalStatus(true)}>Add a company</button>
+        <button id="add-company" onClick={()=>changeModalStatus(true)}>Add a company</button>
         </div>
         </>
      );

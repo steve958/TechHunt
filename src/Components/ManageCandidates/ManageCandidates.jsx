@@ -2,7 +2,6 @@ import React from "react";
 import CardCandidates from "../CardCandidates/CardCandidates";
 import { useState } from "react";
 import AddCandidateModal from "../AddCandidateModal/AddCandidateModal";
-import "./ManageCandidates.scss"
 
 const ManageCandidates = () => {
 
@@ -21,7 +20,7 @@ const ManageCandidates = () => {
             <CardCandidates></CardCandidates>
         </div>
         <div className="addCandidate-button-wrapper">
-        <button onClick={()=>changeModalStatus(true)}>Add a candidate</button>
+        <button id="add-candidate" onClick={()=>changeModalStatus(true)}>Add a candidate</button>
         </div>
         </>
      );

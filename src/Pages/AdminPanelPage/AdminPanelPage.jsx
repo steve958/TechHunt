@@ -12,7 +12,7 @@ const AdminPanelPage = () => {
   const value = useContext(ctx);
 
   const [isCandidatesClicked, setIsCanditatesClicked] = useState(
-    'false' === localStorage.getItem('isCandidatesClicked')
+    true
   );
   const [isCompaniesClicked, setIsCompaniesClicked] = useState(
     'true' === localStorage.getItem('isCompaniesClicked')

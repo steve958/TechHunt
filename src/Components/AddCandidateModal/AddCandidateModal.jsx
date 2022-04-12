@@ -26,7 +26,6 @@ const AddCandidateModal = (props)=>{
         .then((res) => res.json())
         .then((data) => {
           console.log(value.tokenData)
-          console.log("Dodajem kandidata"+data)
          props.setModal()
          value.setShouldUpdate()
       });
@@ -44,7 +43,7 @@ const AddCandidateModal = (props)=>{
 
     return (
         <div className="addCandidateModal-container">
-            <button id="closeaddcandidate-modal" onClick={()=>props.setModal()}>X</button>
+            <button id="closeaddcandidate-modal" onClick={()=>props.setModal()}>close modal</button>
             <div className="addCandidateModal-wrapper">
                 <p>ID:</p>
                 <input type="number" name="id" onChange={(e) =>{
@@ -70,7 +69,7 @@ const AddCandidateModal = (props)=>{
                 <input type="text" name="avatar" onChange={(e) =>{
                     fillCandidatesData(e.target.name, e.target.value)
                 }} placeholder="avatar"/>
-            <button onClick={()=>addCandidate()}>Add Candidate</button>
+            <button id="add-candidate" onClick={()=>addCandidate()}>Add Candidate</button>
             </div>
             
 

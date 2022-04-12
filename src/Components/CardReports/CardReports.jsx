@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { ctx } from '../ProviderComp/ProviderComp';
+import "./CardReports.scss"
 
 const CardReports = () => {
   const value = useContext(ctx);
@@ -22,24 +23,46 @@ const CardReports = () => {
 
   return (
     <div className='cardreports-wrapper'>
-      {value.reportsData.map((e) => {
-        return (
-          <div className='reports-wrapper-each' key={e.id}>
-            <button
-              className='removereport'
-              onClick={(event) => {
-                deleteCard(e, event);
-              }}
-            >
-              X
-            </button>
-            <img
-              src='https://upload.wikimedia.org/wikipedia/commons/9/90/Ic_person_48px.svg'
-              alt='cantLoad'
-            ></img>
-          </div>
-        );
-      })}
+      <h2 className='title'>MANAGE REPORTS</h2>
+      <table className='reports-wrapper-each'>
+        <tr>
+          <th className='delete-id'>Report id</th>
+          <th className='delete-id'>Candidate id</th>
+          <th>Candidate name</th>
+          <th className='delete-id'>Company id</th>
+          <th>Company name</th>
+          <th>Interview date</th>
+          <th>Phase</th>
+          <th>Status</th>
+          <th className='delete-note'>Note</th>
+          <th>Remove report</th>
+        </tr>
+        {value.reportsData.map((e) => {
+          return (
+            <tr key={e.id}>
+              <td className='delete-id'>{e.id}</td>
+              <td className='delete-id'>{e.candidateId}</td>
+              <td>{e.candidateName}</td>
+              <td className='delete-id'>{e.companyId}</td>
+              <td>{e.companyName}</td>
+              <td>{e.interviewDate}</td>
+              <td>{e.phase}</td>
+              <td>{e.status}</td>
+              <td className='delete-note'>{e.note}</td>
+              <td>
+                <button
+                  className='removereport'
+                  onClick={(event) => {
+                    deleteCard(e, event);
+                  }}
+                >
+                  remove report
+                </button>
+              </td>
+            </tr>
+          );
+        })}
+      </table>
     </div>
   );
 };

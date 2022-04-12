@@ -1,0 +1,51 @@
+div.cardreports-wrapper {
+  max-height: 70vh;
+  padding: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  @media (max-width: 1000px) {
+    justify-content: center;
+    justify-items: center;
+    width: 100vw;
+    padding: 0;
+  }
+
+  @media (max-width:650px) {
+      justify-content: center;
+  }
+}
+
+table.reports-wrapper-each {
+  flex-wrap: wrap;
+  border: 2px solid whitesmoke;
+  width: 70vw;
+  padding: 5em;
+  position: relative;
+  color: whitesmoke;
+  text-align: center;
+  background-color: rgba(1, 41, 83, 0.5764705882);
+  @media (max-width: 1000px) {
+    padding: 0;
+  }
+}
+
+div.cardreports-wrapper::-webkit-scrollbar {
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0.693);
+}
+div.cardreports-wrapper::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  border-radius: 25px;
+}
+
+.delete-note {
+  @media (max-width: 1550px) {
+    display: none;
+  }
+}
+
+.delete-id {
+  @media (max-width: 850px) {
+    display: none;
+  }
+}

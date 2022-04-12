@@ -23,8 +23,9 @@ const CardCompanies = () => {
   };
 
   return (
-    <div className="cardcompanies-wrapper">
-      <table className="cardcandidates-wrapper-each">
+    <div className='cardcompanies-wrapper'>
+      <h2 className='title'>MANAGE COMPANIES</h2>
+      <table className='cardcandidates-wrapper-each'>
         <tr>
           <th>Name</th>
           <th>Email</th>
@@ -34,14 +35,14 @@ const CardCompanies = () => {
           return (
             <tr>
               <td>
-                <p className="items">{e.name}</p>
+                <p className='items'>{e.name}</p>
               </td>
               <td>
-                <p className="items">{e.email}</p>
+                <p className='change-font'>{e.email}</p>
               </td>
               <td>
                 <button
-                  className="removecandidate"
+                  className='removecandidate'
                   onClick={(event) => {
                     deleteCard(e, event);
                   }}

@@ -1,13 +1,14 @@
 div.cardcandidates-wrapper {
-  //   max-height: 60vh;
-  padding: 40px;
+  max-height: 70vh;
+  padding: 20px;
   overflow-y: scroll;
   overflow-x: hidden;
   display: flex;
   flex-wrap: wrap;
   @media (max-width: 850px) {
     height: 80vh;
-    min-width: 100%;
+    width: 100%;
+    padding: 0;
   }
 }
 
@@ -24,6 +25,10 @@ div.cardcandidates-wrapper {
   padding: 0.3em;
   background-color: whitesmoke;
   border: none;
+  @media (max-width: 450px) {
+    max-width: 50px;
+    font-size: 10px;
+  }
 }
 
 table.cardcandidates-wrapper-each {
@@ -35,6 +40,9 @@ table.cardcandidates-wrapper-each {
   color: whitesmoke;
   text-align: center;
   background-color: rgba(1, 41, 83, 0.5764705882);
+  @media (max-width: 850px) {
+    padding: 0;
+  }
 }
 
 div.cardcandidates-wrapper::-webkit-scrollbar {
@@ -71,5 +79,22 @@ td > button:hover {
 .remove-email {
   @media (max-width: 850px) {
     display: none;
+  }
+}
+
+.remove-education {
+  @media (max-width: 540px) {
+    font-size: 10px;
+  }
+}
+
+h2.title {
+  letter-spacing: 15px;
+  color: whitesmoke;
+  @media (max-width: 850px) {
+    letter-spacing: 8px;
+  }
+  @media (max-width: 550px) {
+    letter-spacing: 5px;
   }
 }

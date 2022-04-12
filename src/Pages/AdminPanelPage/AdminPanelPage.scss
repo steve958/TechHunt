@@ -2,15 +2,54 @@ div.adminpanelpage-container {
   height: 100vh;
   width: 100vw;
   background-image: url('./background\ final.jpg');
+  position: fixed;
 }
 
 div.adminpanelpage-wrapper {
   width: 80vw;
   margin-left: 10em;
   margin-right: 10em;
+  @media (max-width: 850) {
+    justify-content: center;
+    margin-left: 5rem;
+  }
+
+  @media (max-width: 650px) {
+    justify-content: center;
+    margin-left: 2em;
+  }
 }
 
 div.button-wrapper {
   display: flex;
   justify-content: space-around;
+}
+
+#candidates,
+#companies,
+#reports {
+  padding: 1em;
+  border: 4px solid rgba(1, 41, 83, 0.5764705882);
+  border-radius: 5px;
+}
+
+#reports:active {
+  background-color: rgba(1, 41, 83, 0.5764705882);
+  color: whitesmoke;
+}
+
+#candidates:active {
+  background-color: rgba(1, 41, 83, 0.5764705882);
+  color: whitesmoke;
+}
+
+#companies:active {
+  background-color: rgba(1, 41, 83, 0.5764705882);
+  color: whitesmoke;
+}
+
+#candidates,
+#companies,
+#reports:hover {
+  cursor: pointer;
 }
