@@ -43,7 +43,9 @@ const CardCandidates = () => {
                 ></img>
               </td>
               <td>
-                <p className='items'>{e.name}</p>
+                <Link to={`candidates/${e.id}`}>
+                  <p className='items cardcandidates-p-name-link'>{e.name}</p>
+                </Link>
               </td>
               <td>
                 <p className='items remove-education'>{e.education}</p>
