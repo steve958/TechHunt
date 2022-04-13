@@ -9,7 +9,9 @@ const LoginPage = () => {
   const value = useContext(ctx);
   return (
     <div className='login-page-containter'>
-      <h1 className='welcome'>Welcome to TechHunt</h1>
+      <h1 className='welcome'>
+        Welcome to Tech<p id='hunt'>Hunt</p>
+      </h1>
       <div className='login-page-wrapper'>
         <div>
           <LoginComp></LoginComp>

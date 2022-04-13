@@ -3,9 +3,12 @@ import { ctx } from '../ProviderComp/ProviderComp';
 import { useContext } from 'react';
 import './CardCompanies.scss';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const CardCompanies = () => {
   const value = useContext(ctx);
+  const [comp, setComp] = useState('');
+
   console.log(value);
   const deleteCard = (e, event) => {
     event.preventDefault();
@@ -21,39 +24,84 @@ const CardCompanies = () => {
         value.setShouldUpdate();
       });
   };
+  const handleChange = (inputValue) => {
+    console.log(inputValue);
+    setComp(
+      value.companiesData.filter((e) => {
+        return (
+          e.name.includes(inputValue) ||
+          e.name.toLowerCase().includes(inputValue)
+        );
+      })
+    );
+    // console.log(cand);
+  };
 
   return (
     <div className='cardcompanies-wrapper'>
       <h2 className='title'>MANAGE COMPANIES</h2>
+      <input
+        id='managecompaniesSearch'
+        onChange={(e) => {
+          handleChange(e.target.value);
+        }}
+        type='text'
+        name='search'
+        placeholder='search'
+      />
       <table className='cardcandidates-wrapper-each'>
         <tr>
           <th>Name</th>
           <th>Email</th>
           <th>Remove candidate</th>
         </tr>
-        {value.companiesData.map((e) => {
-          return (
-            <tr>
-              <td>
-                <p className='items'>{e.name}</p>
-              </td>
-              <td>
-                <p className='change-font'>{e.email}</p>
-              </td>
-              <td>
-                <button
-                  className='removecandidate'
-                  onClick={(event) => {
-                    deleteCard(e, event);
-                  }}
-                >
-                  remove company
-                </button>
-              </td>
-            </tr>
-            //   </Link>
-          );
-        })}
+        {comp
+          ? comp.map((e) => {
+              return (
+                <tr>
+                  <td>
+                    <p className='items'>{e.name}</p>
+                  </td>
+                  <td>
+                    <p className='change-font'>{e.email}</p>
+                  </td>
+                  <td>
+                    <button
+                      className='removecandidate'
+                      onClick={(event) => {
+                        deleteCard(e, event);
+                      }}
+                    >
+                      remove company
+                    </button>
+                  </td>
+                </tr>
+                //   </Link>
+              );
+            })
+          : value.companiesData.map((e) => {
+              return (
+                <tr>
+                  <td>
+                    <p className='items'>{e.name}</p>
+                  </td>
+                  <td>
+                    <p className='change-font'>{e.email}</p>
+                  </td>
+                  <td>
+                    <button
+                      className='removecandidate'
+                      onClick={(event) => {
+                        deleteCard(e, event);
+                      }}
+                    >
+                      remove company
+                    </button>
+                  </td>
+                </tr>
+                //   </Link>
+              );
+            })}
       </table>
     </div>
   );

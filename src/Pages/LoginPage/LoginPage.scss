@@ -15,6 +15,7 @@ h1.welcome {
   flex-wrap: wrap;
   font-size: clamp(4.5rem, 2.5vw, 3rem);
   color: whitesmoke;
+  letter-spacing: 10px;
   @media (max-width: 850px) {
     margin: 0;
     font-size: clamp(3rem, 1.5vw, 2rem);
@@ -97,4 +98,12 @@ div button.continue:hover {
 
 div.img-father {
   text-align: center;
+}
+
+#hunt {
+  display: inline;
+  background-color: whitesmoke;
+  max-width: fit-content;
+  color: rgba(1, 41, 83, 1);
+  border-radius: 8px;
 }

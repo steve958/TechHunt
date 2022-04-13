@@ -45,7 +45,7 @@ const Wizzard3 = (props) => {
           props.modal();
         });
     } else {
-      console.log(report);
+      alert('Please fill all the informations');
     }
   };
 
