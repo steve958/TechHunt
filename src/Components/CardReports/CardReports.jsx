@@ -6,8 +6,7 @@ import "./CardReports.scss"
 const CardReports = () => {
   const value = useContext(ctx);
 
-  const deleteCard = (e, event) => {
-    event.preventDefault();
+  const deleteCard = (e) => {
     fetch(`http://localhost:3333/api/reports/${e.id}`, {
       method: 'DELETE',
       headers: {
@@ -52,8 +51,8 @@ const CardReports = () => {
               <td>
                 <button
                   className='removereport'
-                  onClick={(event) => {
-                    deleteCard(e, event);
+                  onClick={() => {
+                    deleteCard(e);
                   }}
                 >
                   remove report

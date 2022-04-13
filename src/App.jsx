@@ -65,6 +65,7 @@ export const App = () => {
           setShouldUpdate,
           companiesData,
           reportsData,
+          tokenStatus,
         }}
       >
         {tokenStatus ? (
@@ -83,7 +84,6 @@ export const App = () => {
                 <AdminPanelPage></AdminPanelPage>
               </Redirect>
             </Route>
-
           </Switch>
         ) : (
           <Switch>

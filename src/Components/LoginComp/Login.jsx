@@ -9,6 +9,7 @@ export const LoginComp = () => {
   const value = useContext(ctx);
   const [userpass, getUserpass] = useState();
   const [useremail, getUseremail] = useState();
+  const [invalid, setInvalid] = useState('');
 
   const submitCredentials = () => {
     fetch('http://localhost:3333/login', {
@@ -27,10 +28,16 @@ export const LoginComp = () => {
           ? value.changeTokenStatus(true)
           : value.changeTokenStatus(false);
 
-        localStorage.setItem('token', true);
+        data.accessToken
+          ? localStorage.setItem('token', true)
+          : localStorage.setItem('token', false);
 
         value.getTokenData(data.accessToken);
         localStorage.setItem('tokenData', data.accessToken);
+        if (typeof data === 'string') {
+          setInvalid(data);
+          alert(data);
+        }
       });
   };
 
@@ -39,7 +46,6 @@ export const LoginComp = () => {
       <p className='login-admin'>Login as Admin</p>
       <h2 className='admin-info'>Enter as admin and manage data and reports</h2>
       <div className='input'>
-        {localStorage.getItem('token') === 'true' ? <h3 className='wrong-input'>You have entered an invalid email or password</h3> : null}
         <input
           type='text'
           placeholder='email'

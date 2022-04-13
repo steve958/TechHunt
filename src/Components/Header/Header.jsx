@@ -8,17 +8,17 @@ export const Header = (props) => {
   const value = useContext(ctx);
 
   return (
-    <div className="header">
-      <div className="header-logo"></div>
-      <div className="login-wrapper">
-        <p className="logged">
+    <div className='header'>
+      <div className='header-logo'></div>
+      <div className='login-wrapper'>
+        <p className='logged'>
           {localStorage.getItem('token') === 'true'
             ? 'You are logged in as admin'
             : 'Guest'}
         </p>
-        <Link to="/login">
+        <Link to='/login'>
           <button
-            className="log-button"
+            className='log-button'
             onClick={() => {
               if (localStorage.getItem('token') === 'true') props.logout();
             }}
