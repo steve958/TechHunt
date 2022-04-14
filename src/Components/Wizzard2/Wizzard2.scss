@@ -3,7 +3,7 @@ div.wizzard2-container {
   text-align: center;
   overflow-y: scroll;
   overflow-x: hidden;
-  max-height: 70vh;
+  max-height: 50vh;
 }
 
 #select-company {
@@ -27,11 +27,11 @@ div.wizzard2-container {
   background-color: rgba(1, 41, 83);
 }
 
-div.wizzard1-container::-webkit-scrollbar {
+div.wizzard2-container::-webkit-scrollbar {
   width: 12px;
   background-color: rgba(0, 0, 0, 0.693);
 }
-div.wizzard1-container::-webkit-scrollbar-thumb {
+div.wizzard2-container::-webkit-scrollbar-thumb {
   background: whitesmoke;
   border-radius: 25px;
 }

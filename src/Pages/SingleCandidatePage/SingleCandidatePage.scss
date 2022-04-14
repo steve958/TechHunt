@@ -18,12 +18,12 @@ div.img-first-wrapper {
   @media (max-width: 550px) {
     display: flex;
     align-items: flex-end;
-    }
+  }
   img {
     background-color: rgba(245, 245, 245);
     @media (max-width: 550px) {
-    width: 150px;
-    height: 150px;
+      width: 150px;
+      height: 150px;
     }
   }
 }
@@ -78,6 +78,7 @@ div.singlepage-candidate-table-container {
 }
 
 div.singlepage-singlecandidatereport-wrapper {
+  font-size: 20px;
   background-color: rgba(245, 245, 245, 0.623);
   min-height: 10vh;
   display: flex;
@@ -89,8 +90,8 @@ div.singlepage-singlecandidatereport-wrapper {
   @media (max-width: 1000px) {
     font-size: 10px;
   }
-  button{
-   @media (max-width: 1000px) {
+  button {
+    @media (max-width: 1000px) {
       width: 60px;
     }
   }
@@ -109,8 +110,14 @@ div.singlepage-singlecandidatereport-wrapper > button:hover {
   background-color: rgba(245, 245, 245, 0.623);
 }
 
-h1.single-candidate-page-dateofbirth-h1{
+h1.single-candidate-page-dateofbirth-h1 {
   @media (max-width: 550px) {
     display: none;
   }
+}
+
+#reports-table {
+  color: whitesmoke;
+  font-size: 40px;
+  text-align: center;
 }

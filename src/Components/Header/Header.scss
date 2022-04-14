@@ -16,6 +16,13 @@
   background-size: cover;
 }
 
+.header-logo:hover {
+  cursor: pointer;
+  border: 2px solid rgba(1, 41, 83);
+  border-radius: 25%;
+  padding: 0.5em;
+}
+
 .logged {
   margin-right: 2vw;
   font-size: 20px;

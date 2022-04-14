@@ -49,3 +49,15 @@ div.cardreports-wrapper::-webkit-scrollbar-thumb {
     display: none;
   }
 }
+
+.delete-date {
+  @media (max-width: 530px) {
+    display: none;
+  }
+}
+
+.removereport {
+  @media (max-width: 420px) {
+    font-size: 10px;
+  }
+}

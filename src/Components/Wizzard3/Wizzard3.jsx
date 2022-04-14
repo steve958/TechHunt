@@ -18,6 +18,8 @@ const Wizzard3 = (props) => {
     note: '',
   });
 
+  const [wrongInput, setwrongInput] = useState(null);
+
   const createNewReport = () => {
     if (
       report.id &&
@@ -45,7 +47,8 @@ const Wizzard3 = (props) => {
           props.modal();
         });
     } else {
-      alert('Please fill all the informations');
+      setwrongInput('Please fill all the informations');
+      // alert('Please fill all the informations');
     }
   };
 
@@ -57,9 +60,10 @@ const Wizzard3 = (props) => {
   };
 
   return (
-    <div className='wizzard3-container'>
-      <div className='selected-wrapper'>
-        <h2 className='input-selected'>SELECTED CANDIDATE:</h2>
+    <div className="wizzard3-container">
+      <h2 id="wrong-input">{wrongInput}</h2>
+      <div className="selected-wrapper">
+        <h2 className="input-selected">SELECTED CANDIDATE:</h2>
         <p
           className={
             localStorage.getItem('candidateName') !== 'null' ? null : 'redness'
@@ -70,8 +74,8 @@ const Wizzard3 = (props) => {
             : 'NO CANDIDATE SELECTED'}
         </p>
       </div>
-      <div className='selected-wrapper'>
-        <h2 className='input-selected'>SELECTED COMPANY:</h2>
+      <div className="selected-wrapper">
+        <h2 className="input-selected">SELECTED COMPANY:</h2>
         <p
           className={
             localStorage.getItem('companyName') !== 'null' ? null : 'redness'
@@ -84,59 +88,59 @@ const Wizzard3 = (props) => {
       </div>
       <p>ID:</p>
       <input
-        type='number'
-        id='id-selected'
-        name='id'
+        type="number"
+        id="id-selected"
+        name="id"
         onChange={(e) => {
           fillReportData(e.target.name, e.target.value);
         }}
       />
       <p>Interview Date</p>
       <input
-        type='date'
-        id='date'
-        name='interviewDate'
+        type="date"
+        id="date"
+        name="interviewDate"
         onChange={(e) => {
           fillReportData(e.target.name, e.target.value);
         }}
       />
       <p>Phase:</p>
       <select
-        id='phase'
-        name='phase'
+        id="phase"
+        name="phase"
         onClick={(e) => {
           fillReportData(e.target.name, e.target.value);
         }}
       >
         <option></option>
-        <option value='hr'>HR</option>
-        <option value='cv'>CV</option>
+        <option value="hr">HR</option>
+        <option value="cv">CV</option>
       </select>
       <p>Status:</p>
       <select
-        id='status'
-        name='status'
+        id="status"
+        name="status"
         onClick={(e) => {
           fillReportData(e.target.name, e.target.value);
         }}
       >
         <option></option>
-        <option value='declined'>DECLINED</option>
-        <option value='passed'>PASSED</option>
+        <option value="declined">DECLINED</option>
+        <option value="passed">PASSED</option>
       </select>
-      <div className='submit-wrapper'>
+      <div className="submit-wrapper">
         <p>Note:</p>
         <textarea
-          type='text'
-          id='note'
-          cols='10'
-          name='note'
+          type="text"
+          id="note"
+          cols="10"
+          name="note"
           onChange={(e) => {
             fillReportData(e.target.name, e.target.value);
           }}
         />
         <button
-          className='submit-report-button'
+          className="submit-report-button"
           onClick={() => createNewReport()}
         >
           submit
