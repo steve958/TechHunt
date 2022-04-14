@@ -39,16 +39,18 @@ const CardCompanies = () => {
 
   return (
     <div className='cardcompanies-wrapper'>
-      <h2 className='title'>MANAGE COMPANIES</h2>
-      <input
-        id='managecompaniesSearch'
-        onChange={(e) => {
-          handleChange(e.target.value);
-        }}
-        type='text'
-        name='search'
-        placeholder='search'
-      />
+      <div className='h2-and-input-wrapper-companies'>
+        <h2 className='title'>MANAGE COMPANIES</h2>
+        <input
+          id='managecompaniesSearch'
+          onChange={(e) => {
+            handleChange(e.target.value);
+          }}
+          type='text'
+          name='search'
+          placeholder='search'
+        />
+      </div>
       <table className='cardcandidates-wrapper-each'>
         <tr>
           <th>Name</th>

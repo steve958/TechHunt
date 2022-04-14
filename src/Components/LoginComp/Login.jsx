@@ -3,13 +3,14 @@ import './Login.scss';
 import { useState, useContext } from 'react';
 import { ctx } from '../ProviderComp/ProviderComp';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 export const LoginComp = () => {
-  const [data, submitCred] = useState();
   const value = useContext(ctx);
-  const [userpass, getUserpass] = useState();
-  const [useremail, getUseremail] = useState();
+  const [userpass, getUserpass] = useState('');
+  const [useremail, getUseremail] = useState('');
   const [invalid, setInvalid] = useState('');
+  const  history  = useHistory();
 
   const submitCredentials = () => {
     fetch('http://localhost:3333/login', {
@@ -34,9 +35,12 @@ export const LoginComp = () => {
 
         value.getTokenData(data.accessToken);
         localStorage.setItem('tokenData', data.accessToken);
+
         if (typeof data === 'string') {
           setInvalid(data);
-          alert(data);
+          console.log(data);
+        } else if (data.accessToken) {
+          history.push('/adminpanel');
         }
       });
   };
@@ -45,6 +49,7 @@ export const LoginComp = () => {
     <div className='login-comp'>
       <p className='login-admin'>Login as Admin</p>
       <h2 className='admin-info'>Enter as admin and manage data and reports</h2>
+      <p className="wrong-input">{invalid}</p>
       <div className='input'>
         <input
           type='text'
@@ -60,11 +65,11 @@ export const LoginComp = () => {
             getUserpass(e.target.value);
           }}
         />
-        <Link to='/adminpanel'>
-          <button id='sign-in' onClick={submitCredentials}>
-            sign in
-          </button>
-        </Link>
+        {/* <Link to='/adminpanel'> */}
+        <button id='sign-in' onClick={submitCredentials}>
+          sign in
+        </button>
+        {/* </Link> */} 
       </div>
     </div>
   );

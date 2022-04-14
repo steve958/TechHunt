@@ -51,8 +51,8 @@ div > input {
   height: 3vh;
   color: whitesmoke;
   font-size: 1.5em;
-  @media (max-width: 850px) {
-    width: 35vw;
+  @media (max-width: 1000px) {
+    width: 25vw;
   }
   @media (max-width: 350px) {
     width: 50vw;
@@ -77,3 +77,5 @@ button#sign-in:hover {
   margin: 0;
   color: red;
 }
+
+

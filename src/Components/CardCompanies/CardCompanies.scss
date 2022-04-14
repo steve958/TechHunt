@@ -29,3 +29,12 @@ div.cardcompanies-wrapper::-webkit-scrollbar-thumb {
     font-size: 10px;
   }
 }
+
+div.h2-and-input-wrapper-companies{
+  display: flex;
+  flex-wrap: wrap;
+  @media (max-width: 1000px) {
+    width: 200px;
+    
+  }
+}
