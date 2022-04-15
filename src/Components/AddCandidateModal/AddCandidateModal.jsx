@@ -41,10 +41,10 @@ const AddCandidateModal = (props) => {
   return (
     <div className='addCandidateModal-container'>
       <button id='closeaddcandidate-modal' onClick={() => props.setModal()}>
-        close modal
+        X
       </button>
       <div className='addCandidateModal-wrapper'>
-        <p>ID:</p>
+        {/* <p>ID:</p>
         <input
           type='number'
           name='id'
@@ -52,7 +52,7 @@ const AddCandidateModal = (props) => {
             fillCandidatesData(e.target.name, e.target.value);
           }}
           placeholder='id'
-        />
+        /> */}
         <p>Name:</p>
         <input
           type='text'

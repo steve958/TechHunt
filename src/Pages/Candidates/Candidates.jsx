@@ -22,10 +22,11 @@ export const Candidates = () => {
     // console.log(cand);
   };
   function logOut() {
-    localStorage.setItem('token', '');
+    // localStorage.setItem('token', '');
     value.changeTokenStatus(false);
-    localStorage.setItem('tokenData', '');
-    localStorage.setItem('isCandidatesClicked', false);
+    // localStorage.setItem('tokenData', '');
+    // localStorage.setItem('isCandidatesClicked', false);
+    localStorage.clear();
   }
   return (
     <div className='candidates-guestpage-container-master'>

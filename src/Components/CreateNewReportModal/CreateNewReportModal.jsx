@@ -11,10 +11,13 @@ const CreateNewReportModal = (props) => {
   const [isWizzard3Open, setisWizzard3Open] = useState(false);
 
   const changeWizzardSubmit = () => {
-    if (isWizzard1Open) {
+    if (isWizzard1Open && localStorage.getItem('candidateName') !== 'null') {
       setisWizzard1Open(false);
       setisWizzard2Open(true);
-    } else if (isWizzard2Open) {
+    } else if (
+      isWizzard2Open &&
+      localStorage.getItem('companyName') !== 'null'
+    ) {
       setisWizzard2Open(false);
       setisWizzard3Open(true);
     }
@@ -33,7 +36,7 @@ const CreateNewReportModal = (props) => {
     <>
       <div className='createnewreportmodal-container'>
         <button id='closenewreport-modal' onClick={() => props.setModal()}>
-          close modal
+          X
         </button>
         <div className='first-button'>
           <button id='previous-button' onClick={() => changeWizzardPrev()}>

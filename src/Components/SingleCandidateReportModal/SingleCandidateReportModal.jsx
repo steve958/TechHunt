@@ -12,13 +12,11 @@ const SingleCandidateReportModal = (props) => {
               props.setModal(false);
             }}
           >
-            Close
+            X
           </button>
           <div className='report-modal-first-forinfo'>
             <h1>Report ID : {props.reportData.id}</h1>
-            <h1>
-              Candidate name : {props.reportData.candidateName}
-            </h1>
+            <h1>Candidate name : {props.reportData.candidateName}</h1>
             <h2>Company name : {props.reportData.companyName}</h2>
             <div>
               <h2>Phase of the interview : {props.reportData.phase}</h2>

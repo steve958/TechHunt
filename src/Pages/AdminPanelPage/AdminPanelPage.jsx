@@ -10,49 +10,61 @@ import Header from '../../Components/Header/Header';
 
 const AdminPanelPage = () => {
   const value = useContext(ctx);
-
-  const [isCandidatesClicked, setIsCanditatesClicked] = useState(true);
-  const [isCompaniesClicked, setIsCompaniesClicked] = useState(false);
-  const [isReportsClicked, setIsReportsClicked] = useState(false);
+  const [candDefault, setCandDefault] = useState(
+    null === localStorage.getItem('isCandidatesClicked')
+  );
+  const [isCandidatesClicked, setIsCanditatesClicked] = useState(
+    'true' === localStorage.getItem('isCandidatesClicked')
+  );
+  const [isCompaniesClicked, setIsCompaniesClicked] = useState(
+    'true' === localStorage.getItem('isCompaniesClicked')
+  );
+  const [isReportsClicked, setIsReportsClicked] = useState(
+    'true' === localStorage.getItem('isReportsClicked')
+  );
 
   const changeisCandidatesClicked = (e) => {
     e.stopPropagation();
+
+    localStorage.setItem('isCandidatesClicked', 'true');
+    localStorage.setItem('isCompaniesClicked', 'false');
+    localStorage.setItem('isReportsClicked', 'false');
+
     setIsCanditatesClicked(true);
-
-
-
     setIsCompaniesClicked(false);
-
     setIsReportsClicked(false);
-
   };
   const changeIsCompaniesClicked = (e) => {
     e.stopPropagation();
-    setIsCompaniesClicked(true);
-   
 
+    localStorage.setItem('isCompaniesClicked', 'true');
+    localStorage.setItem('isCandidatesClicked', 'false');
+    localStorage.setItem('isReportsClicked', 'false');
+
+    setIsCompaniesClicked(true);
     setIsCanditatesClicked(false);
-    
     setIsReportsClicked(false);
- 
+    setCandDefault(false);
   };
 
   const changeIsReportsClicked = (e) => {
     e.stopPropagation();
-    setIsReportsClicked(true);
-  
+    localStorage.setItem('isReportsClicked', 'true');
+    localStorage.setItem('isCompaniesClicked', 'false');
+    localStorage.setItem('isCandidatesClicked', 'false');
 
+    setIsReportsClicked(true);
     setIsCanditatesClicked(false);
-    
     setIsCompaniesClicked(false);
-    
+    setCandDefault(false);
   };
 
   function logOut() {
-    localStorage.setItem('token', '');
+    // localStorage.setItem('token', '');
     value.changeTokenStatus(false);
-    localStorage.setItem('tokenData', '');
-    localStorage.setItem('isCandidatesClicked', false);
+    // localStorage.setItem('tokenData', '');
+    // localStorage.setItem('isCandidatesClicked', false);
+    localStorage.clear();
   }
 
   return (
@@ -75,6 +87,7 @@ const AdminPanelPage = () => {
             </button>
           </div>
           <div className='content-wrapper'>
+            {candDefault && <ManageCandidates></ManageCandidates>}
             {isCandidatesClicked && <ManageCandidates></ManageCandidates>}
             {isCompaniesClicked && <ManageCompanies></ManageCompanies>}
             {isReportsClicked && <ManageReports></ManageReports>}

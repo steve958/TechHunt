@@ -10,7 +10,7 @@ export const Header = (props) => {
       </Link>
       {localStorage.getItem('token') ? (
         <Link to='/adminpanel'>
-          <h2 id='admin-panel-link'>Adminpanel</h2>
+          <button id='admin-panel-link'>Adminpanel</button>
         </Link>
       ) : null}
       <div className='login-wrapper'>
