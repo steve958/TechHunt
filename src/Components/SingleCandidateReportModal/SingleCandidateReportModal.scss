@@ -35,3 +35,8 @@ div.single-candidate-report-modal-wrapper {
 div.report-modal-first-forinfo {
   min-height: 25vh;
 }
+
+
+div.report-modal-first-forinfo > * {
+  margin: 10px;
+}

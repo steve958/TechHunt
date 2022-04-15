@@ -40,7 +40,7 @@ export const SinglePage = () => {
               return (
                 <div className="singlepage-candidate-wrapper">
                   <div className="img-first-wrapper">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Ic_person_48px.svg/240px-Ic_person_48px.svg.png" />
+                    <img src={e.avatar} alt="can't load image"/>
                   </div>
                   <div className="info-second-wrapper">
                     <div className="info-second-wrapper-forcenter">

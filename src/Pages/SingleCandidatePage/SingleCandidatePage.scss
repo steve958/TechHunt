@@ -21,6 +21,9 @@ div.img-first-wrapper {
   }
   img {
     background-color: rgba(245, 245, 245);
+    border: 10px solid rgba(1, 41, 83);
+    width: 300px;
+    height: auto;
     @media (max-width: 550px) {
       width: 150px;
       height: 150px;

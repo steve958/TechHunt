@@ -5,6 +5,7 @@ div.candidates-guestpage-container{
     display: flex;
     flex-wrap: wrap;
     max-height: 80vh;
+    justify-content: center;
     padding: 30px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -18,12 +19,30 @@ div.candidate-guestpage-wrapper{
     width: 400px; 
     background-color:rgba(245, 245, 245, 0.623);
     text-align: center;
+    border: 20px solid;
+    outline: 2px solid whitesmoke;
+    outline-offset: 5px;
+    transition: outline-offset 250ms ease;
     
 }
+
+div.candidate-guestpage-wrapper:hover, 
+div.candidate-guestpage-wrapper:focus {
+  outline-offset: -10px;
+  outline-width: 5px;
+} 
+
+
 
 a{
   text-decoration: none;
   color: #012953fd;
+}
+
+div.candidate-guestpage-wrapper > img {
+  width: 300px;
+  height: 300px;  
+  border-radius: 50%;
 }
 
 
