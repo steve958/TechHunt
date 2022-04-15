@@ -62,9 +62,9 @@ export const Candidates = () => {
                 <Link to={`candidates/${e.id}`}>
                   <div className='candidate-guestpage-wrapperPrima'>
                     <div className='candidate-guestpage-wrapper' key={e.id}>
-                      <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Ic_person_48px.svg/240px-Ic_person_48px.svg.png' />
+                      <img src={e.avatar} alt="can't load image" />
                       <h2 className='candidates-guestpage-ime'>{e.name}</h2>
-                      <p>{e.birthday}</p>
+                      <p>{e.birthday.split(' ').slice(0, 4).join(' ')}</p>
                       <p>{e.education}</p>
                       <p>{e.email}</p>
                     </div>

@@ -48,7 +48,6 @@ const Wizzard3 = (props) => {
         });
     } else {
       setwrongInput('Please fill all the informations');
-      // alert('Please fill all the informations');
     }
   };
 

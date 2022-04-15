@@ -20,8 +20,6 @@ export const App = () => {
 
   const [reportsData, getReportsData] = useState([]);
 
-  const [loginClicked, setLogin] = useState(false);
-
   const [shouldUpdate, setUpdate] = useState(false);
   const setShouldUpdate = () => {
     setUpdate(!shouldUpdate);
@@ -39,7 +37,6 @@ export const App = () => {
     fetch('http://localhost:3333/api/companies')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         getCompaniesData(data);
       });
   }, [shouldUpdate]);
@@ -48,7 +45,6 @@ export const App = () => {
     fetch('http://localhost:3333/api/reports')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         getReportsData(data);
       });
   }, [shouldUpdate]);
@@ -59,13 +55,12 @@ export const App = () => {
         value={{
           changeTokenStatus,
           tokenStatus,
-          candidatesData,
           getTokenData,
           tokenData,
           setShouldUpdate,
+          candidatesData,
           companiesData,
           reportsData,
-          tokenStatus,
         }}
       >
         {tokenStatus ? (

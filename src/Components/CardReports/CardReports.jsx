@@ -7,52 +7,54 @@ const CardReports = () => {
   const value = useContext(ctx);
 
   const deleteCard = (e) => {
-    fetch(`http://localhost:3333/api/reports/${e.id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: `Bearer ${value.tokenData}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        value.setShouldUpdate();
-      });
+    if (window.confirm('Are you sure you want to delete a candidate')) {
+      fetch(`http://localhost:3333/api/reports/${e.id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-type': 'application/json',
+          Authorization: `Bearer ${value.tokenData}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          value.setShouldUpdate();
+        });
+    }
   };
 
   return (
-    <div className="cardreports-wrapper">
-      <h2 className="title">MANAGE REPORTS</h2>
-      <table className="reports-wrapper-each">
+    <div className='cardreports-wrapper'>
+      <h2 className='title'>MANAGE REPORTS</h2>
+      <table className='reports-wrapper-each'>
         <tr>
-          <th className="delete-id">Report id</th>
-          <th className="delete-id">Candidate id</th>
+          <th className='delete-id'>Report id</th>
+          <th className='delete-id'>Candidate id</th>
           <th>Candidate name</th>
-          <th className="delete-id">Company id</th>
+          <th className='delete-id'>Company id</th>
           <th>Company name</th>
-          <th className="delete-date">Interview date</th>
+          <th className='delete-date'>Interview date</th>
           <th>Phase</th>
           <th>Status</th>
-          <th className="delete-note">Note</th>
+          <th className='delete-note'>Note</th>
           <th>Remove report</th>
         </tr>
         {value.reportsData.map((e) => {
           return (
             <tr key={e.id}>
-              <td className="delete-id">{e.id}</td>
-              <td className="delete-id">{e.candidateId}</td>
+              <td className='delete-id'>{e.id}</td>
+              <td className='delete-id'>{e.candidateId}</td>
               <td>{e.candidateName}</td>
-              <td className="delete-id">{e.companyId}</td>
+              <td className='delete-id'>{e.companyId}</td>
               <td>{e.companyName}</td>
-              <td className="delete-date">
+              <td className='delete-date'>
                 {e.interviewDate.split(' ').slice(0, 4).join(' ')}
               </td>
               <td>{e.phase}</td>
               <td>{e.status}</td>
-              <td className="delete-note">{e.note}</td>
+              <td className='delete-note'>{e.note}</td>
               <td>
                 <button
-                  className="removereport"
+                  className='removereport'
                   onClick={() => {
                     deleteCard(e);
                   }}

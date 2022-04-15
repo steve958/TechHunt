@@ -8,34 +8,33 @@ import { useState } from 'react';
 const CardCandidates = () => {
   const value = useContext(ctx);
   const [cand, setCand] = useState('');
-  console.log(cand);
 
   const deleteCard = (e, event) => {
     event.preventDefault();
-    fetch(`http://localhost:3333/api/candidates/${e.id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: `Bearer ${value.tokenData}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        value.setShouldUpdate();
-      });
+    if (window.confirm('Are you sure you want to delete a candidate')) {
+      fetch(`http://localhost:3333/api/candidates/${e.id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-type': 'application/json',
+          Authorization: `Bearer ${value.tokenData}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          value.setShouldUpdate();
+        });
+    }
   };
 
   const handleChange = (inputValue) => {
-    console.log(inputValue);
     setCand(
       value.candidatesData.filter((e) => {
         return (
           e.name.includes(inputValue) ||
-          e.name.toLowerCase().includes(inputValue)
+          e.name.toLowerCase().includes(inputValue) 
         );
       })
     );
-    // console.log(cand);
   };
 
   return (
@@ -52,7 +51,7 @@ const CardCandidates = () => {
       />
       <table className='cardcandidates-wrapper-each'>
         <tr>
-          <th>Avatar</th>
+          <th id='delete-img'>Avatar</th>
           <th>Name</th>
           <th className='remove-education'>Education</th>
           <th className='remove-email'>Email</th>
@@ -64,6 +63,7 @@ const CardCandidates = () => {
                 <tr>
                   <td>
                     <img
+                      id='delete-img'
                       src='https://upload.wikimedia.org/wikipedia/commons/9/90/Ic_person_48px.svg'
                       alt='cantLoad'
                     ></img>
@@ -100,6 +100,7 @@ const CardCandidates = () => {
                 <tr>
                   <td>
                     <img
+                      id='delete-img'
                       src='https://upload.wikimedia.org/wikipedia/commons/9/90/Ic_person_48px.svg'
                       alt='cantLoad'
                     ></img>

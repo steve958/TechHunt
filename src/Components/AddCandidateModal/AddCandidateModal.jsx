@@ -26,7 +26,7 @@ const AddCandidateModal = (props) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(value.tokenData);
-        //  props.setModal()
+        props.setModal();
         value.setShouldUpdate();
       });
   };

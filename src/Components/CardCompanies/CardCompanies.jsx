@@ -8,21 +8,21 @@ import { useState } from 'react';
 const CardCompanies = () => {
   const value = useContext(ctx);
   const [comp, setComp] = useState('');
-
-  console.log(value);
   const deleteCard = (e, event) => {
-    event.preventDefault();
-    fetch(`http://localhost:3333/api/companies/${e.id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json',
-        Authorization: `Bearer ${value.tokenData}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        value.setShouldUpdate();
-      });
+    if (window.confirm('Are you sure you want to delete a company')) {
+      event.preventDefault();
+      fetch(`http://localhost:3333/api/companies/${e.id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-type': 'application/json',
+          Authorization: `Bearer ${value.tokenData}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          value.setShouldUpdate();
+        });
+    }
   };
   const handleChange = (inputValue) => {
     console.log(inputValue);
