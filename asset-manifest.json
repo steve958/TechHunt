@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/techHunt/static/css/main.5e50e36f.css",
+    "main.js": "/techHunt/static/js/main.53a1783d.js",
+    "static/media/background final.jpg": "/techHunt/static/media/background final.3eb8afae2a6bc32cb8b8.jpg",
+    "static/media/wolf1.png": "/techHunt/static/media/wolf1.a12df983118880e06c70.png",
+    "index.html": "/techHunt/index.html",
+    "main.5e50e36f.css.map": "/techHunt/static/css/main.5e50e36f.css.map",
+    "main.53a1783d.js.map": "/techHunt/static/js/main.53a1783d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e50e36f.css",
+    "static/js/main.53a1783d.js"
+  ]
+}
