@@ -31,30 +31,30 @@ const CardCandidates = () => {
       value.candidatesData.filter((e) => {
         return (
           e.name.includes(inputValue) ||
-          e.name.toLowerCase().includes(inputValue) 
+          e.name.toLowerCase().includes(inputValue)
         );
       })
     );
   };
 
   return (
-    <div className='cardcandidates-wrapper'>
-      <h2 className='title'>MANAGE CANDIDATES</h2>
+    <div className="cardcandidates-wrapper">
+      <h2 className="title">MANAGE CANDIDATES</h2>
       <input
-        id='managecandidatesSearch'
+        id="managecandidatesSearch"
         onChange={(e) => {
           handleChange(e.target.value);
         }}
-        type='text'
-        name='search'
-        placeholder='search'
+        type="text"
+        name="search"
+        placeholder="search"
       />
-      <table className='cardcandidates-wrapper-each'>
+      <table className="cardcandidates-wrapper-each">
         <tr>
-          <th id='delete-img'>Avatar</th>
+          <th id="delete-img">Avatar</th>
           <th>Name</th>
-          <th className='remove-education'>Education</th>
-          <th className='remove-email'>Email</th>
+          <th className="remove-education">Education</th>
+          <th className="remove-email">Email</th>
           <th>Remove candidate</th>
         </tr>
         {cand
@@ -62,28 +62,24 @@ const CardCandidates = () => {
               return (
                 <tr>
                   <td>
-                    <img
-                      id='delete-img'
-                      src='https://upload.wikimedia.org/wikipedia/commons/9/90/Ic_person_48px.svg'
-                      alt='cantLoad'
-                    ></img>
+                    <img id="delete-img" src={e.avatar} alt="cantLoad"></img>
                   </td>
                   <td>
                     <Link to={`candidates/${e.id}`}>
-                      <p className='items cardcandidates-p-name-link'>
+                      <p className="items cardcandidates-p-name-link">
                         {e.name}
                       </p>
                     </Link>
                   </td>
                   <td>
-                    <p className='items remove-education'>{e.education}</p>
+                    <p className="items remove-education">{e.education}</p>
                   </td>
-                  <td className='remove-email'>
-                    <p className='items'>{e.email}</p>
+                  <td className="remove-email">
+                    <p className="items">{e.email}</p>
                   </td>
                   <td>
                     <button
-                      className='removecandidate'
+                      className="removecandidate"
                       onClick={(event) => {
                         deleteCard(e, event);
                       }}
@@ -99,28 +95,24 @@ const CardCandidates = () => {
               return (
                 <tr>
                   <td>
-                    <img
-                      id='delete-img'
-                      src='https://upload.wikimedia.org/wikipedia/commons/9/90/Ic_person_48px.svg'
-                      alt='cantLoad'
-                    ></img>
+                    <img id="delete-img" src={e.avatar} alt="cantLoad"></img>
                   </td>
                   <td>
                     <Link to={`candidates/${e.id}`}>
-                      <p className='items cardcandidates-p-name-link'>
+                      <p className="items cardcandidates-p-name-link">
                         {e.name}
                       </p>
                     </Link>
                   </td>
                   <td>
-                    <p className='items remove-education'>{e.education}</p>
+                    <p className="items remove-education">{e.education}</p>
                   </td>
-                  <td className='remove-email'>
-                    <p className='items'>{e.email}</p>
+                  <td className="remove-email">
+                    <p className="items">{e.email}</p>
                   </td>
                   <td>
                     <button
-                      className='removecandidate'
+                      className="removecandidate"
                       onClick={(event) => {
                         deleteCard(e, event);
                       }}

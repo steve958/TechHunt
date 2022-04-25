@@ -29,27 +29,31 @@ export const Candidates = () => {
     localStorage.clear();
   }
   return (
-    <div className='candidates-guestpage-container-master'>
+    <div className="candidates-guestpage-container-master">
       <Header logout={logOut}></Header>
       <input
-        id='guestpageSearch'
+        id="guestpageSearch"
         onChange={(e) => {
           handleChange(e.target.value);
         }}
-        type='text'
-        name='search'
-        placeholder='search'
+        type="text"
+        name="search"
+        placeholder="search"
       />
-      <div className='candidates-guestpage-container'>
+      <div className="candidates-guestpage-container">
         {!cand
           ? value.candidatesData.map((e) => {
               console.log(e);
               return (
                 <Link to={`candidates/${e.id}`}>
-                  <div className='candidate-guestpage-wrapperPrima'>
-                    <div className='candidate-guestpage-wrapper' key={e.id}>
-                      <img src={e.avatar} alt="can't load image" />
-                      <h2 className='candidates-guestpage-ime'>{e.name}</h2>
+                  <div className="candidate-guestpage-wrapperPrima">
+                    <div className="candidate-guestpage-wrapper" key={e.id}>
+                      <img
+                        clasName="avatar-img"
+                        src={e.avatar}
+                        alt="can't load image"
+                      />
+                      <h2 className="candidates-guestpage-ime">{e.name}</h2>
                       <p>{e.birthday.split(' ').slice(0, 4).join(' ')}</p>
                       <p>{e.education}</p>
                       <p>{e.email}</p>
@@ -61,10 +65,10 @@ export const Candidates = () => {
           : cand.map((e) => {
               return (
                 <Link to={`candidates/${e.id}`}>
-                  <div className='candidate-guestpage-wrapperPrima'>
-                    <div className='candidate-guestpage-wrapper' key={e.id}>
+                  <div className="candidate-guestpage-wrapperPrima">
+                    <div className="candidate-guestpage-wrapper" key={e.id}>
                       <img src={e.avatar} alt="can't load image" />
-                      <h2 className='candidates-guestpage-ime'>{e.name}</h2>
+                      <h2 className="candidates-guestpage-ime">{e.name}</h2>
                       <p>{e.birthday.split(' ').slice(0, 4).join(' ')}</p>
                       <p>{e.education}</p>
                       <p>{e.email}</p>

@@ -1,77 +1,66 @@
-div.candidates-guestpage-container{
-    margin-top: 3vh;
-    margin-right:5vw;
-    margin-left:5vw;
-    display: flex;
-    flex-wrap: wrap;
-    max-height: 80vh;
-    justify-content: center;
-    padding: 30px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    
-    
+div.candidates-guestpage-container {
+  margin-top: 3vh;
+  margin-right: 5vw;
+  margin-left: 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 80vh;
+  justify-content: center;
+  padding: 30px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-
-div.candidate-guestpage-wrapper{
-    padding: 10px;
-    width: 400px; 
-    background-color:rgba(245, 245, 245, 0.623);
-    text-align: center;
-    border: 20px solid;
-    outline: 2px solid whitesmoke;
-    outline-offset: 5px;
-    transition: outline-offset 250ms ease;
-    
+div.candidate-guestpage-wrapper {
+  padding: 10px;
+  width: 400px;
+  background-color: rgba(245, 245, 245, 0.623);
+  text-align: center;
+  border: 20px solid;
+  outline: 2px solid whitesmoke;
+  outline-offset: 5px;
+  transition: outline-offset 250ms ease;
 }
 
-div.candidate-guestpage-wrapper:hover, 
+div.candidate-guestpage-wrapper:hover,
 div.candidate-guestpage-wrapper:focus {
   outline-offset: -10px;
   outline-width: 5px;
-} 
+}
 
-
-
-a{
+a {
   text-decoration: none;
   color: #012953fd;
 }
 
 div.candidate-guestpage-wrapper > img {
   width: 300px;
-  height: 300px;  
+  height: 300px;
   border-radius: 50%;
 }
 
-
-
-div.candidate-guestpage-wrapperPrima{
+div.candidate-guestpage-wrapperPrima {
   padding: 10px;
   background-image: linear-gradient(to bottom, #d5e8e9 0% #012953c7);
-  margin:10px
+  margin: 10px;
 }
 
-div.candidates-guestpage-container-master{
+div.candidates-guestpage-container-master {
   background-image: url('./background\ final.jpg');
   height: 100vh;
 }
 
-
-
 div.candidates-guestpage-container::-webkit-scrollbar {
-    width: 12px;
-    background-color: rgba(0, 0, 0, 0.693);
-    // color: rgb(153, 75, 75);
-    
-  }
-  div.candidates-guestpage-container::-webkit-scrollbar-thumb {
-    background: whitesmoke;
-    border-radius: 25px;
-  }
+  width: 12px;
+  background-color: rgba(0, 0, 0, 0.693);
+  // color: rgb(153, 75, 75);
+}
+div.candidates-guestpage-container::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  border-radius: 25px;
+}
 
-  h2.candidates-guestpage-ime{
-    letter-spacing: 3px;
-    padding-bottom: 5px;
-  }
+h2.candidates-guestpage-ime {
+  letter-spacing: 3px;
+  padding-bottom: 5px;
+}
